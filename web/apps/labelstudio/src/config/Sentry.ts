@@ -8,7 +8,7 @@ export const initSentry = (history: RouterHistory) => {
   if (APP_SETTINGS.debug === false && APP_SETTINGS.frontend_sentry_dsn) {
     setTags();
     Sentry.init({
-      dsn: APP_SETTINGS.frontend_sentry_dsn,
+      dsn: APP_SETTINGS.sentry_dsn,
       integrations: [
         new Integrations.BrowserTracing({
           routingInstrumentation: ReactSentry.reactRouterV5Instrumentation(history),
