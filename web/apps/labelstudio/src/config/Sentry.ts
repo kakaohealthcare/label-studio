@@ -5,7 +5,7 @@ import { Integrations } from "@sentry/tracing";
 import { Route } from "react-router-dom";
 
 export const initSentry = (history: RouterHistory) => {
-  if (APP_SETTINGS.debug === false && APP_SETTINGS.frontend_sentry_dsn) {
+  if (APP_SETTINGS.debug === false && APP_SETTINGS.sentry_dsn) {
     setTags();
     Sentry.init({
       dsn: APP_SETTINGS.sentry_dsn,
